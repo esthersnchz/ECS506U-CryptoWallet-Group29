@@ -1,0 +1,178 @@
+package com.company;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+public class Main {
+
+
+    public static void main(String[] args) {
+        Investor Est = createInvestor();
+        useCase(Est);
+
+    }
+
+    public static void useCase(Investor investor){
+        boolean repeat=true;
+        boolean checkreponse=false;
+        String balance="";
+        String response="";
+        String walletName="";
+
+        //user enters type of transaction they want to do
+        while(repeat) {
+            response = input("What typo of transaction would you like to do? :Send or Receive Crypto?");
+            checkreponse= checkresponse(response);
+            while(!checkreponse){
+                    response = input("try again");
+                    checkreponse = checkresponse(response);
+            }
+
+            //a list of existing wallets is provided to the user
+            print("\nThis is the list of your wallets \n" + investor.getWalletNames()+"\n");
+            String response2 = input("Would you like to see the balance in any of your wallets ?(Yes/No)");
+
+            if (response2.equalsIgnoreCase("yes")) {
+                //user selects the wallet from which they want to get the balance
+                balance=input("\nEnter the wallet name to see its balance\nEnter all to see the balance of all your wallets");
+                checkreponse=checkWalletName(balance, investor);
+                while(!checkreponse){
+                    if (balance.equalsIgnoreCase("all")){break;}
+                    else{
+                        balance = input("Enter another wallet name");
+                        checkreponse=checkWalletName(balance, investor);
+                    }
+                }
+                if (balance.equalsIgnoreCase("all") ) {
+                    print("\nThis is the balance in all your wallets \n" + investor.getWalletsBalance());
+                } else {
+                    System.out.println("This is the balance for " + balance + "\n" + investor.getOneWallet(balance).getCryptos());
+                }
+            }
+
+            //user selects the wallet in which they want to do the transaction
+            checkreponse=false;
+            //if the wallet name does nit exist the user will have to input another name
+            while (!checkreponse) {
+                walletName = input("\nIn which wallet would you like to perform the transaction?");
+                checkreponse = checkWalletName(walletName, investor);
+            }
+                if (response.equalsIgnoreCase("send")) {
+                    performTransaction("send", investor, walletName);
+                } else if (response.equals("receive") || response.equals("Receive")) {
+                    performTransaction("receive", investor, walletName);
+                }
+                repeat = repeatTransaction((input("\nWould you like to do any other transaction?(Yes/No)")));
+
+        }
+    }
+
+
+
+        //method to perform the transactions
+        public static void performTransaction(String transactionType , Investor investor, String walletName) {
+
+            String cryptoName= input("\nWhat Crypto would you like to "+transactionType+"?");
+            if (transactionType.equalsIgnoreCase("send")) {
+                //check if the crypto exists inside the wallet
+                boolean cryptoExists = investor.getOneWallet(walletName).checkCryptoExists(cryptoName);
+                while (!cryptoExists) {
+                    cryptoName = input("\nYou do not have this crypto in your wallet\nEnter another crypto");
+                    cryptoExists = investor.getOneWallet(walletName).checkCryptoExists(cryptoName);
+                }
+            }
+
+            String cryptoAmount= input("\nEnter the amount");
+            if (transactionType.equalsIgnoreCase("send")){
+                boolean checkBalance=investor.getOneWallet(walletName).checkFunds(cryptoName,Double.parseDouble(cryptoAmount));
+                while(!checkBalance){
+                    cryptoAmount=input("\nYou have insufficient funds\nEnter another amount");
+                    checkBalance=investor.getOneWallet(walletName).checkFunds(cryptoName,Double.parseDouble(cryptoAmount));
+                }
+                input("\nEnter the address of the destination wallet");
+                print("\nVerifying destination wallet address.......");
+                wait(100);
+            }
+
+            print("\nConnecting tot he blockchain...............");
+            wait(100);
+            print("...........................................");
+            wait(1500);
+            print("\nTransaction complete!");
+            wait(100);
+            print("\nThis is the summary of your transaction");
+            if (transactionType.equalsIgnoreCase("send")){
+                print(investor.tradeCryto(walletName,cryptoName,-Double.parseDouble(cryptoAmount),transactionType));
+            }
+            else{
+                print(investor.tradeCryto(walletName,cryptoName,Double.parseDouble(cryptoAmount),transactionType));
+            }
+            String newBalance=input("\nWould you like to see the current balance of "+walletName+"? (Yes/No)");
+            if (newBalance.equalsIgnoreCase("yes")){
+                print( "\nThis si the new balance in "+walletName+ "\n"+ investor.getOneWallet(walletName).getCryptos());
+            }
+
+        }
+
+
+
+    //hardcoding a sample investor to demonstratee the use case
+    public static Investor createInvestor(){
+        Investor Esty= new Investor("esty19","123456","IDKwhattowrite","Esther","Sanchez");
+        Wallet wallet1 = new Wallet("wallet1","1234","4567","wallet1",false);
+        Wallet wallet2 = new Wallet("wallet2","4321","4567","wallet2",false);
+            Esty.setWallets(wallet1);
+            Esty.setWallets(wallet2);
+            Esty.getOneWallet("wallet1").setCryptos("Bitcoin",40.00);
+            Esty.getOneWallet("wallet2").setCryptos("Cardano",56.00);
+        return Esty;
+    }
+
+    //ask user if they want to do another transaction
+    public static Boolean repeatTransaction(String input){
+        if (input.equalsIgnoreCase("yes")){
+            return true;
+        }
+        return false;
+    }
+
+    //method to check if the wallet nam input by the user exists
+    public static boolean checkWalletName(String input, Investor investor){
+        if(input.equalsIgnoreCase("all")){return true;}
+        else if (!investor.checkNameExist(input)){
+            print("\nWrong wallet name");
+            return false;
+        }
+
+        return true;
+    }
+
+    //check if user has input the right transaction name
+    public static boolean checkresponse(String response){
+        if (response.equalsIgnoreCase("send")||response.equalsIgnoreCase("receive")){
+            return true;
+        }
+        print("\nWrong transaction name");
+        return false;
+    }
+
+    public static String input(String message){
+        Scanner scanner = new Scanner(System.in);
+        print(message);
+       String answer = scanner.nextLine();
+        return answer;
+    }
+
+    public static void print(String message){
+        System.out.println(message);
+    }
+    public static void wait(int ms)
+    {
+        try
+        {
+            Thread.sleep(ms);
+        }
+        catch(InterruptedException ex)
+        {
+            Thread.currentThread().interrupt();
+        }
+    }
+}
