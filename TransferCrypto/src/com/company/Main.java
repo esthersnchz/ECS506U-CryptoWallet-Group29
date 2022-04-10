@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
         Investor investor = createInvestor();
-        useCase(Est);
+        useCase(investor);
 
     }
 
