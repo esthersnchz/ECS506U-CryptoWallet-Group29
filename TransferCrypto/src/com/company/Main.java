@@ -5,7 +5,7 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Investor Est = createInvestor();
+        Investor investor = createInvestor();
         useCase(Est);
 
     }
@@ -116,14 +116,14 @@ public class Main {
 
     //hardcoding a sample investor to demonstratee the use case
     public static Investor createInvestor(){
-        Investor Esty= new Investor("esty19","123456","IDKwhattowrite","Esther","Sanchez");
+        Investor investor= new Investor("esty19","123456","IDKwhattowrite","Esther","Sanchez");
         Wallet wallet1 = new Wallet("wallet1","1234","4567","wallet1",false);
         Wallet wallet2 = new Wallet("wallet2","4321","4567","wallet2",false);
-            Esty.setWallets(wallet1);
-            Esty.setWallets(wallet2);
-            Esty.getOneWallet("wallet1").setCryptos("Bitcoin",40.00);
-            Esty.getOneWallet("wallet2").setCryptos("Cardano",56.00);
-        return Esty;
+        investor.setWallets(wallet1);
+        investor.setWallets(wallet2);
+        investor.getOneWallet("wallet1").setCryptos("Bitcoin",40.00);
+        investor.getOneWallet("wallet2").setCryptos("Cardano",56.00);
+        return investor;
     }
 
     //ask user if they want to do another transaction
