@@ -1,7 +1,10 @@
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.Scanner;
 
 import java.util.Random;
@@ -14,7 +17,6 @@ class Register{
     private String password;
     private int phoneNumber;
     private String emailID;
-    private String walletAddress;
     private String accountType;
 
 
@@ -48,11 +50,13 @@ class Register{
     }
     public void setPassword(String password){
         this.password = password;
+        
     }
 
     public int getPhoneNumber(){
         return phoneNumber;
     }
+
     public void setPhoneNumber(int phoneNumber){
         this.phoneNumber = phoneNumber;
     }
@@ -74,18 +78,6 @@ class Register{
 
     }
 
-    public String getPublicKey(){
-        return publicKey;
-    }
-
-    public void generatePublicKey(){
-        Random key = new Random();
-        int publicKey = key.nextInt();
-        String hexKey = Integer.toHexString(publicKey);
-        System.out.println(hexKey);
-    }
-    
-
 
 
     public static void main(String args[]){
@@ -99,40 +91,64 @@ class Register{
         }
        catch (Exception e) {
        }
+        System.out.println("First Name: ");
+        String firstName = obj.nextLine();
+        user.setFirstName(firstName);
 
-        user.generatePublicKey();
-        // System.out.println("First Name: ");
-        // String firstName = obj.nextLine();
-        // user.setFirstName(firstName);
+        System.out.println("Last Name: ");
+        String lastName = obj.nextLine();
+        user.setLastName(lastName);
 
-        // System.out.println("Last Name: ");
-        // String lastName = obj.nextLine();
-        // user.setLastName(lastName);
+        System.out.println("Email ID: ");
+        String emailID = obj.nextLine();
+        user.setEmailID(emailID);
 
+        System.out.println("User Name: ");
+        String userName = obj.nextLine();
+        user.setUserName(userName);
 
-        // System.out.println("User Name: ");
-        // String userName = obj.nextLine();
-        // user.setUserName(userName);
+        System.out.println("Choose a password: ");
+        String password = obj.nextLine();
+        user.setPassword(password);
 
+        System.out.println("Phone Number: ");
+        String phoneNumber = obj.nextLine();
+        user.setPassword(phoneNumber);
+
+     
+
+        System.out.println("Account Type (Personal or Professional): ");
+        String accountType = obj.nextLine();
+        user.setAccountType(accountType);
 
         
         try{
 
-            FileWriter writeDetails = new FileWriter("details.txt");
-            
-            // writeDetails.write(user.getFirstName());
-            // writeDetails.write(user.getLastName());
-            // writeDetails.write(user.getEmailID());
-            // writeDetails.write(user.getUserName());
-            // writeDetails.write(user.getPassword());
-            // writeDetails.write(user.getPhoneNumber());
-            // writeDetails.write(user.getAccountType());
 
+            File writeDetails = new File("details.txt");
+            FileOutputStream fileStream = new FileOutputStream(writeDetails);
+            BufferedWriter myFile = new BufferedWriter(new OutputStreamWriter(fileStream));
+            myFile.write(user.getFirstName());
+            myFile.newLine();
+            myFile.write(user.getLastName());
+            myFile.newLine();
+            myFile.write(user.getEmailID());
+            myFile.newLine();
+            myFile.write(user.getUserName());
+            myFile.newLine();
+            myFile.write(user.getPassword());
+            myFile.newLine();
+            myFile.write(user.getPhoneNumber());
+            myFile.newLine();
+            myFile.write(user.getAccountType());
+            myFile.newLine();
 
-            writeDetails.close();
+            myFile.close();
 
         }
         catch(IOException e){
+
+            System.out.println("Invalid Information");
             e.printStackTrace();
         }
 
