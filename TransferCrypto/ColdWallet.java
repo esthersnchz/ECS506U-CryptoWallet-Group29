@@ -26,9 +26,5 @@ public class ColdWallet {
 /*
 Ask for which wallet
 Wallet selection
-Password entry
-Check Password
-Amount selection?
-Remove amount from account?
-Hard code transfer complete
+transfer complete
  */
