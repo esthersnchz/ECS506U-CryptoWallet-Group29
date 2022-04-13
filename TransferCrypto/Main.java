@@ -1,3 +1,5 @@
+package TransferCrypto;
+
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +21,7 @@ public class Main {
             String response = input("What typo of transaction would you like to do? :Send or Receive Crypto?");
             checkreponse = checkresponse(response,"send","receive","\nWrong transaction name");
             while (!checkreponse) {
-                response = input("try again");
+                response = input("Try again");
                 checkreponse = checkresponse(response,"send","receive","Wrong transaction name");
             }
 
