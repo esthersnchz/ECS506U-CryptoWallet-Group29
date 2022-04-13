@@ -1,3 +1,5 @@
+package TransferCrypto;
+
 import java.util.HashMap;
 
 public class Wallet {
