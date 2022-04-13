@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376049f7-a8f6-4725-94c9-2c6e8cb201d8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TransferCrypto/TransferCrypto.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TransferCrypto/ColdWallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/ColdWallet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TransferCrypto/ColdWallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/ColdWallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransferCrypto/Investor.java" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/Investor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransferCrypto/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransferCrypto/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransferCrypto/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransferCrypto/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/Wallet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/TransferCrypto/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/TransferCrypto/.idea/TransferCrypto.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/TransferCrypto/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/TransferCrypto/.idea/modules.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,27 +41,31 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Application.Tranfer">
-    <configuration name="ColdWallet" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="ColdWallet" />
+  <component name="RunManager" selected="Application.Transfer">
+    <configuration name="ColdWallet" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="TransferCrypto.ColdWallet" />
       <module name="ECS506U-CryptoWallet-Group29" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tranfer" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="15" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="Transfer" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="TransferCrypto.Main" />
       <module name="ECS506U-CryptoWallet-Group29" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TransferCrypto" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Tranfer" />
+      <item itemvalue="Application.Transfer" />
       <item itemvalue="Application.ColdWallet" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ColdWallet" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
