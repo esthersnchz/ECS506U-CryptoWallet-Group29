@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376049f7-a8f6-4725-94c9-2c6e8cb201d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/TransferCrypto/Investor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TransferCrypto/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TransferCrypto/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TransferCrypto/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TransferCrypto/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/Wallet.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TransferCrypto/TransferCrypto.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransferCrypto/ColdWallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/ColdWallet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TransferCrypto/ColdWallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/TransferCrypto/ColdWallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/TransferCrypto/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/TransferCrypto/.idea/TransferCrypto.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/TransferCrypto/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ECS506U-CryptoWallet-Group29/TransferCrypto/.idea/modules.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +19,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="27kmr4xPkt1loPcjZTmMbd7hAme" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -24,17 +35,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RunManager">
     <configuration name="Tranfer" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="15" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="TransferCrypto.Main" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="ECS506U-CryptoWallet-Group29" />
       <method v="2">
         <option name="Make" enabled="true" />

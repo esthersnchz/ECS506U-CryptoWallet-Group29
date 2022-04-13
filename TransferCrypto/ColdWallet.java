@@ -15,7 +15,6 @@ public class ColdWallet {
         String walletName = "";
         while (repeat) {
             boolean checkreponse;
-            print("Transfer to cold wallet use case");
             print("\nThis is the list of your wallets \n" + investor.getWalletNames() + "\n");
 
             String response = input("Would you like to see the balance in any of your wallets ?(Yes/No)");
