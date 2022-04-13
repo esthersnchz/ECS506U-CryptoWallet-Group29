@@ -15,7 +15,11 @@ public class ColdWallet {
         ArrayList<string> wallets = person.getWalletsNames();
 
         if (wallets.contains(usedWallet)){
-            System.out.println("Transfer to cold wallet complete");
+            string PasswordAttempt = new Scanner(System.in);
+            if (PasswordAttempt.equals(person.getPassword()){
+                System.out.println("Transfer to cold wallet complete");
+            else{
+                System.out.println("Password Incorrect");
         }
         else {
             System.out.println("Transaction failed, wallet does not exist");
@@ -26,9 +30,5 @@ public class ColdWallet {
 /*
 Ask for which wallet
 Wallet selection
-Password entry
-Check Password
-Amount selection?
-Remove amount from account?
-Hard code transfer complete
+transfer complete
  */
